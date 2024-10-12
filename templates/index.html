@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Home</title>
+    <style>
+      body {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h1>Hello User</h1>
+    
+    <button onclick="location.href='/emp';" style="padding: 10px 20px; font-size: 16px; margin: 20px;">
+      Go to Employee Management
+  </button>
+
+    {% if isActive %}
+    <div>
+      <p>Name: {{name}}</p>
+      <p>date: {{date}}</p>
+
+      <h1>Student Name: {{student.student_name}}</h1>
+      <h1>Student age: {{student.student_age}}</h1>
+      <h1>Student college: {{student.student_college}}</h1>
+
+      <p>Today we are writing the program to</p>
+      {% for i in list_of_program %}
+      <p>{{i}}</p>
+
+      {% endfor %}
+      {% endif %} 
+      
+      <form action="" method="POST">
+        {% csrf_token %}
+        <input type="radio" value="True" name="check" >
+        <input type="submit" value="Submit">
+      </form>
+
+    </div>
+  </body>
+</html>
